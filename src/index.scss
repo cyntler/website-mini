@@ -1,0 +1,61 @@
+:root {
+  --font-family-lato: 'Lato', sans-serif;
+  --font-size-normal: 1.375rem;
+  --font-size-huge: 2.5rem;
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+}
+
+* {
+  --webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  font-size: calc(60% + 0.35vw);
+}
+
+body {
+  margin: 0;
+  padding: 3.5rem;
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size-normal);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  border: 0;
+  width: 2.5rem;
+}
+
+h1 {
+  font-size: var(--font-size-huge);
+  margin: 3.8rem 0 0 -1px;
+  padding: 0;
+  font-weight: bold;
+}
+
+p {
+  margin: 2.5rem 0 0 0;
+  font-weight: normal;
+  width: 100%;
+  max-width: 715px;
+  line-height: 1.625rem;
+
+  a {
+    color: var(--color-secondary);
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      border-color: var(--color-secondary);
+    }
+  }
+}
