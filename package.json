@@ -1,0 +1,26 @@
+{
+  "name": "website-mini",
+  "version": "1.0.0",
+  "description": "Mini version of my own website.",
+  "keywords": [
+    "website",
+    "personal",
+    "branding",
+    "mini"
+  ],
+  "private": true,
+  "author": "Damian Cyntler",
+  "license": "MIT",
+  "scripts": {
+    "start": "rimraf ./dist && parcel serve ./src/index.html",
+    "build": "rimraf ./dist && parcel build ./src/index.html"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.0.0-rc.0",
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "@parcel/transformer-webmanifest": "^2.0.0-rc.0",
+    "parcel": "^2.0.0-rc.0",
+    "rimraf": "^3.0.2"
+  }
+}
