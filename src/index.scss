@@ -4,6 +4,7 @@
   --font-size-huge: 2.25rem;
   --color-primary: #ffffff;
   --color-secondary: #000000;
+  --body-padding: 6vw;
   --logo-width: 2.25rem;
   --heading-margin-top: 3.5rem;
   --paragraph-max-width: 715px;
@@ -27,7 +28,7 @@ html {
 
 body {
   margin: 0;
-  padding: 4.5vw;
+  padding: var(--body-padding);
   font-family: var(--font-family-lato);
   font-size: var(--font-size-normal);
   background-color: var(--color-primary);
