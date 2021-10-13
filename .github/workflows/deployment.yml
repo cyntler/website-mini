@@ -15,13 +15,13 @@ jobs:
           node-version: 16
       - name: Install dependencies
         run: npm i
-      - name: Build website
+      - name: Build the website
         run: npm run build
-      - name: Set AWS credentials
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
       - name: S3 Sync
-        run: aws s3 sync ./dist s3://cyntler-website-mini
+        run: aws s3 sync --delete ./dist s3://cyntler-website-mini
