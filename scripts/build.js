@@ -1,0 +1,1 @@
+const parcel = require('parcel');
