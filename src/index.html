@@ -30,24 +30,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./index.scss" />
-    <title>I'm Damian Cyntler.</title>
+    <title>{{ titleAboutMe }}</title>
   </head>
   <body>
-    <a href="/"><img src="./assets/logo.svg" alt="Dc" /></a>
-    <h1>I'm Damian Cyntler.</h1>
-    <p>
-      My adventure with programming started when I was 12 years old. From the
-      beginning I felt that this was a very inspiring activity and it quickly
-      became my passion. I love creating and exploring. The most motivating
-      thing for me in this job is that I can create something for others.
-    </p>
-    <p>
-      Currently, I work for several companies as a Software Developer creating
-      very interesting solutions that are used by hundreds of people from all
-      over the world. Moreover, in my free time I&nbsp;contribute to the open
-      source projects and all the time I&nbsp;am moving towards building my
-      personal brand and my own products.
-    </p>
+    <a href="/"><img src="./assets/logo.svg" alt="{{ titleAboutMe }}" /></a>
+    <h1>{{ titleAboutMe }}</h1>
+    <p>{{ myHistoryContent }}</p>
+    <p>{{ whatDoContent }}</p>
     <p>
       <a href="https://github.com/cyntler" target="_blank">GitHub</a> /
       <a href="https://twitter.com/cyntler" target="_blank">Twitter</a> /
