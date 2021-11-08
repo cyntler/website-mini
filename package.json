@@ -13,7 +13,8 @@
   "license": "MIT",
   "scripts": {
     "start": "rimraf ./dist && parcel serve ./src/index.html --open",
-    "build": "rimraf ./dist && parcel build ./src/index.html"
+    "build": "rimraf ./dist && node ./scripts/build.mjs",
+    "build-parcel": "parcel build ./src/index.html"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.0.0-rc.0",
@@ -21,6 +22,7 @@
     "@parcel/transformer-sass": "^2.0.0-rc.0",
     "@parcel/transformer-webmanifest": "^2.0.0-rc.0",
     "parcel": "^2.0.0-rc.0",
+    "posthtml-expressions": "^1.9.0",
     "rimraf": "^3.0.2"
   }
 }
