@@ -37,14 +37,11 @@ translationFiles.forEach((translationFile) => {
     isDefaultLang ? '' : translationName,
   );
 
-  execSync(`npm run build-parcel -- --dist-dir ${distDir}`);
+  const publicUrl = isDefaultLang ? '/' : `/${translationName}`;
 
-  if (!isDefaultLang) {
-    const langDist = readdirSync(distDir);
-    langDist
-      .filter((name) => name !== 'index.html')
-      .forEach((name) => unlinkSync(join(distDir, name)));
-  }
+  execSync(
+    `npm run build-parcel -- --dist-dir ${distDir} --public-url ${publicUrl}`,
+  );
 
   unlinkSync(postHtmlConfigFile);
 });
