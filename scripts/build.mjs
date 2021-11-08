@@ -4,6 +4,7 @@ import { join } from 'path';
 import { URL } from 'url';
 
 const dirname = new URL('.', import.meta.url).pathname;
+const defaultLang = 'en';
 
 const postHtmlConfigFile = join(dirname, '../.posthtmlrc');
 const postHtmlConfigFileTemplate = `${postHtmlConfigFile}.template`;
@@ -28,7 +29,22 @@ translationFiles.forEach((translationFile) => {
     postHtmlConfigFileTemplateContent.replace('TRANSLATIONS', translationJson),
   );
 
-  execSync(`npm run build-parcel -- --dist-dir ./dist/${translationName}`);
+  const isDefaultLang = translationName === defaultLang;
+
+  const distDir = join(
+    dirname,
+    '../dist/',
+    isDefaultLang ? '' : translationName,
+  );
+
+  execSync(`npm run build-parcel -- --dist-dir ${distDir}`);
+
+  if (!isDefaultLang) {
+    const langDist = readdirSync(distDir);
+    langDist
+      .filter((name) => name !== 'index.html')
+      .forEach((name) => unlinkSync(join(distDir, name)));
+  }
 
   unlinkSync(postHtmlConfigFile);
 });
