@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,11 +30,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./index.scss" />
-    <title>{{{ titleAboutMe }}}</title>
+    <title>{{ titleAboutMe }}</title>
   </head>
   <body>
     <a href="/"><img src="./assets/logo.svg" alt="{{ titleAboutMe }}" /></a>
-    <h1>{{{ titleAboutMe }}}</h1>
+    <h1>{{ titleAboutMe }}</h1>
     <p>{{{ myHistoryContent }}}</p>
     <p>{{{ whatDoContent }}}</p>
     <p>
