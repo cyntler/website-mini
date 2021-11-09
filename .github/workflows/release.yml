@@ -29,4 +29,4 @@ jobs:
       - name: S3 Sync
         run: aws s3 sync --delete ./dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}
       - name: CloudFront Invalidation
-        run: aws cloudfront create-invalidation --distribution-id=${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths '/index.html'
+        run: aws cloudfront create-invalidation --distribution-id=${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
