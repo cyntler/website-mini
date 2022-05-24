@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "liveServer.settings.multiRootWorkspaceName": "website-mini"
+  "liveServer.settings.multiRootWorkspaceName": "website-mini",
+  "liveServer.settings.root": "/dist"
 }
