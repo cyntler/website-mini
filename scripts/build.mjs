@@ -48,8 +48,8 @@ translationFiles.forEach((translationFile) => {
     isDefaultLang ? '' : translationName,
   );
 
-  const publicUrl = `${getArgv('url')}${
-    isDefaultLang ? '/' : `/${translationName}`
+  const publicUrl = `${getArgv('url') ?? ''}${
+    isDefaultLang ? '/' : `/${translationName}/`
   }`;
 
   execSync(
