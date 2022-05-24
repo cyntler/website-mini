@@ -12,7 +12,7 @@
   "author": "Damian Cyntler",
   "license": "MIT",
   "scripts": {
-    "start": "rimraf ./dist && parcel serve ./src/index.html --open",
+    "dev": "rimraf ./dist && node ./scripts/build.mjs",
     "build": "rimraf ./dist && node ./scripts/build.mjs --url=https://cyntler.com",
     "build-parcel": "parcel build ./src/index.html"
   },
