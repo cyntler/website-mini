@@ -1,9 +1,11 @@
 :root {
   --font-family-lato: 'Lato', sans-serif;
+  --font-size-small: 0.75rem;
   --font-size-normal: 1.4rem;
   --font-size-huge: 2.25rem;
   --color-primary: #ffffff;
   --color-secondary: #000000;
+  --color-delicate: #878787;
   --body-padding: 6vw;
   --logo-width: 2.25rem;
   --heading-margin-top: 3.5rem;
@@ -69,4 +71,13 @@ p {
       border-color: var(--color-secondary);
     }
   }
+}
+
+.version {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: var(--font-size-small);
+  padding: 0.5rem;
+  color: var(--color-delicate);
 }

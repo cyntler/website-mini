@@ -4,6 +4,8 @@ import { join } from 'path';
 import { URL } from 'url';
 import { argv } from 'process';
 
+const getJson = (path) => JSON.parse(readFileSync(path, 'utf-8'));
+
 const getArgv = (key) => {
   const value = argv.find((element) => element.startsWith(`--${key}=`));
 
@@ -23,6 +25,7 @@ const postHtmlConfigFileTemplateContent = readFileSync(
   postHtmlConfigFileTemplate,
   'utf8',
 );
+const packageJson = getJson(join(dirname, '../package.json'));
 
 const translationDir = join(dirname, '../src/translations');
 const translationFiles = readdirSync(translationDir);
@@ -30,14 +33,15 @@ const translationFiles = readdirSync(translationDir);
 translationFiles.forEach((translationFile) => {
   const translationName = translationFile.split('.')[0];
 
-  const translationJson = readFileSync(
-    join(translationDir, translationFile),
-    'utf8',
-  );
+  const translationJson = getJson(join(translationDir, translationFile));
+  translationJson.version = packageJson.version;
 
   writeFileSync(
     postHtmlConfigFile,
-    postHtmlConfigFileTemplateContent.replace('TRANSLATIONS', translationJson),
+    postHtmlConfigFileTemplateContent.replace(
+      'TRANSLATIONS',
+      JSON.stringify(translationJson),
+    ),
   );
 
   const isDefaultLang = translationName === defaultLang;
@@ -53,7 +57,7 @@ translationFiles.forEach((translationFile) => {
   }`;
 
   execSync(
-    `npm run build-parcel -- --dist-dir ${distDir} --public-url ${publicUrl}`,
+    `npm run build:parcel -- --dist-dir ${distDir} --public-url ${publicUrl}`,
   );
 
   unlinkSync(postHtmlConfigFile);
