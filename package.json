@@ -14,7 +14,8 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "rimraf ./dist && node ./scripts/build.mjs --url=https://cyntler.com",
-    "build:parcel": "parcel build ./src/index.html"
+    "build:parcel": "parcel build ./src/index.html",
+    "release": "release-it"
   },
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.10.1",
@@ -23,6 +24,7 @@
     "@parcel/transformer-webmanifest": "^2.10.1",
     "parcel": "^2.10.1",
     "posthtml-expressions": "^1.11.2",
+    "release-it": "^16.2.1",
     "rimraf": "^5.0.5"
   }
 }
