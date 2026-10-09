@@ -9,6 +9,7 @@
 
 ## Wydanie i publikacja
 
+- Wydanie zawsze wykonuj przez skrypt `release` z `package.json`, czyli `npm run release` (z odpowiednimi opcjami, jeśli potrzebne). Nie zastępuj go ręcznym aktualizowaniem wersji, tworzeniem commita wydania, tagu i pusha.
 - Gdy użytkownik zleci wydanie, np. napisze „gotowe, release”, uruchom `npm run release` bez ponownego pytania o zgodę. To polecenie jest autoryzacją utworzenia i wypchnięcia wydania na GitHub oraz publikacji strony przez GitHub Actions.
 - Przed wydaniem upewnij się, że zmiany zadania są sprawdzone i zacommitowane. Jeśli użytkownik nie poda numeru wersji, dla drobnych zmian wybierz podbicie `patch` w procedurze `release-it`.
 - Doprowadź wydanie do końca: aktualizacja wersji, commit wydania, tag `v${version}`, push na GitHub i utworzenie GitHub Release, zgodnie z `.release-it.json`.
