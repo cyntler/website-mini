@@ -1,5 +1,11 @@
 import { execSync } from 'child_process';
-import { readdirSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
+import {
+  copyFileSync,
+  readdirSync,
+  readFileSync,
+  unlinkSync,
+  writeFileSync,
+} from 'fs';
 import { join } from 'path';
 import { URL } from 'url';
 import { argv } from 'process';
@@ -61,4 +67,12 @@ translationFiles.forEach((translationFile) => {
   );
 
   unlinkSync(postHtmlConfigFile);
+});
+
+// Keep conventional URLs available for browsers that discover icons at the root.
+['favicon.ico', 'apple-touch-icon.png'].forEach((file) => {
+  copyFileSync(
+    join(dirname, '../src/assets', file),
+    join(dirname, '../dist', file),
+  );
 });
